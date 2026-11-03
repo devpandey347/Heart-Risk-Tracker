@@ -1,0 +1,64 @@
+# ── Python ──────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.spec
+
+# ── Virtual environments ────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+
+# ── Environment / secrets ───────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── ML artifacts (large binaries – do not commit) ──────────
+ml/artifacts/*.pkl
+ml/artifacts/*.joblib
+ml/data/raw/
+ml/data/processed/
+data/raw/
+
+# Keep the artifacts folder tracked (but not its contents)
+!ml/artifacts/.gitkeep
+!ml/data/raw/.gitkeep
+!ml/data/processed/.gitkeep
+
+# ── EDA reports and figures ─────────────────────────────────
+# Uncomment next two lines to also exclude generated reports:
+# ml/reports/
+# ml/reports/figures/
+
+# ── Jupyter ─────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── OS / Editor ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.code-workspace
+
+# ── Node / Frontend ─────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# ── SQLite ──────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3

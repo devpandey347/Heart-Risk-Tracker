@@ -1,0 +1,278 @@
+{
+  "base_risk": -2.9094,
+  "sample_count": 303,
+  "feature_count": 18,
+  "clinical_feature_count": 13,
+  "rankings": [
+    {
+      "rank": 1,
+      "feature": "num__ca",
+      "base_feature": "ca",
+      "display_name": "Major Fluoroscopy Vessels",
+      "type": "numerical",
+      "mean_abs_shap": 0.9552,
+      "unit": "vessels (0-3)"
+    },
+    {
+      "rank": 2,
+      "feature": "binary__sex",
+      "base_feature": "sex",
+      "display_name": "Biological Sex",
+      "type": "categorical",
+      "mean_abs_shap": 0.8835,
+      "unit": ""
+    },
+    {
+      "rank": 3,
+      "feature": "nominal__cp_4.0",
+      "base_feature": "cp",
+      "display_name": "Chest Pain Type: Asymptomatic",
+      "type": "categorical_dummy",
+      "mean_abs_shap": 0.607,
+      "unit": ""
+    },
+    {
+      "rank": 4,
+      "feature": "nominal__thal_7.0",
+      "base_feature": "thal",
+      "display_name": "Thallium Stress Defect: Reversible Defect",
+      "type": "categorical_dummy",
+      "mean_abs_shap": 0.4969,
+      "unit": ""
+    },
+    {
+      "rank": 5,
+      "feature": "nominal__slope_2.0",
+      "base_feature": "slope",
+      "display_name": "Slope of Peak Exercise ST: Flat",
+      "type": "categorical_dummy",
+      "mean_abs_shap": 0.444,
+      "unit": ""
+    },
+    {
+      "rank": 6,
+      "feature": "num__thalach",
+      "base_feature": "thalach",
+      "display_name": "Max Heart Rate Achieved",
+      "type": "numerical",
+      "mean_abs_shap": 0.3162,
+      "unit": "bpm"
+    },
+    {
+      "rank": 7,
+      "feature": "num__trestbps",
+      "base_feature": "trestbps",
+      "display_name": "Resting Blood Pressure",
+      "type": "numerical",
+      "mean_abs_shap": 0.2407,
+      "unit": "mm Hg"
+    },
+    {
+      "rank": 8,
+      "feature": "binary__exang",
+      "base_feature": "exang",
+      "display_name": "Exercise-Induced Angina",
+      "type": "categorical",
+      "mean_abs_shap": 0.1841,
+      "unit": ""
+    },
+    {
+      "rank": 9,
+      "feature": "nominal__restecg_2.0",
+      "base_feature": "restecg",
+      "display_name": "Resting ECG Results: Left Ventricular Hypertrophy",
+      "type": "categorical_dummy",
+      "mean_abs_shap": 0.179,
+      "unit": ""
+    },
+    {
+      "rank": 10,
+      "feature": "num__oldpeak",
+      "base_feature": "oldpeak",
+      "display_name": "ST Depression (Oldpeak)",
+      "type": "numerical",
+      "mean_abs_shap": 0.1747,
+      "unit": "mm"
+    },
+    {
+      "rank": 11,
+      "feature": "num__chol",
+      "base_feature": "chol",
+      "display_name": "Serum Cholesterol",
+      "type": "numerical",
+      "mean_abs_shap": 0.1404,
+      "unit": "mg/dl"
+    },
+    {
+      "rank": 12,
+      "feature": "num__age",
+      "base_feature": "age",
+      "display_name": "Age",
+      "type": "numerical",
+      "mean_abs_shap": 0.0675,
+      "unit": "years"
+    },
+    {
+      "rank": 13,
+      "feature": "nominal__cp_2.0",
+      "base_feature": "cp",
+      "display_name": "Chest Pain Type: Atypical Angina",
+      "type": "categorical_dummy",
+      "mean_abs_shap": 0.067,
+      "unit": ""
+    },
+    {
+      "rank": 14,
+      "feature": "nominal__cp_3.0",
+      "base_feature": "cp",
+      "display_name": "Chest Pain Type: Non-Anginal Pain",
+      "type": "categorical_dummy",
+      "mean_abs_shap": 0.0483,
+      "unit": ""
+    },
+    {
+      "rank": 15,
+      "feature": "binary__fbs",
+      "base_feature": "fbs",
+      "display_name": "Fasting Blood Sugar",
+      "type": "categorical",
+      "mean_abs_shap": 0.0255,
+      "unit": ""
+    },
+    {
+      "rank": 16,
+      "feature": "nominal__slope_3.0",
+      "base_feature": "slope",
+      "display_name": "Slope of Peak Exercise ST: Downsloping",
+      "type": "categorical_dummy",
+      "mean_abs_shap": 0.0075,
+      "unit": ""
+    },
+    {
+      "rank": 17,
+      "feature": "nominal__thal_6.0",
+      "base_feature": "thal",
+      "display_name": "Thallium Stress Defect: Fixed Defect",
+      "type": "categorical_dummy",
+      "mean_abs_shap": 0.0061,
+      "unit": ""
+    },
+    {
+      "rank": 18,
+      "feature": "nominal__restecg_1.0",
+      "base_feature": "restecg",
+      "display_name": "Resting ECG Results: ST-T Wave Abnormality",
+      "type": "categorical_dummy",
+      "mean_abs_shap": 0.001,
+      "unit": ""
+    }
+  ],
+  "clinical_rankings": [
+    {
+      "rank": 1,
+      "feature": "ca",
+      "display_name": "Major Fluoroscopy Vessels",
+      "type": "numerical",
+      "mean_abs_shap": 0.9552,
+      "unit": "vessels (0-3)"
+    },
+    {
+      "rank": 2,
+      "feature": "sex",
+      "display_name": "Biological Sex",
+      "type": "categorical",
+      "mean_abs_shap": 0.8835,
+      "unit": ""
+    },
+    {
+      "rank": 3,
+      "feature": "cp",
+      "display_name": "Chest Pain Type",
+      "type": "categorical",
+      "mean_abs_shap": 0.7223,
+      "unit": ""
+    },
+    {
+      "rank": 4,
+      "feature": "thal",
+      "display_name": "Thallium Stress Defect",
+      "type": "categorical",
+      "mean_abs_shap": 0.503,
+      "unit": ""
+    },
+    {
+      "rank": 5,
+      "feature": "slope",
+      "display_name": "Slope of Peak Exercise ST",
+      "type": "categorical",
+      "mean_abs_shap": 0.4515,
+      "unit": ""
+    },
+    {
+      "rank": 6,
+      "feature": "thalach",
+      "display_name": "Max Heart Rate Achieved",
+      "type": "numerical",
+      "mean_abs_shap": 0.3162,
+      "unit": "bpm"
+    },
+    {
+      "rank": 7,
+      "feature": "trestbps",
+      "display_name": "Resting Blood Pressure",
+      "type": "numerical",
+      "mean_abs_shap": 0.2407,
+      "unit": "mm Hg"
+    },
+    {
+      "rank": 8,
+      "feature": "exang",
+      "display_name": "Exercise-Induced Angina",
+      "type": "categorical",
+      "mean_abs_shap": 0.1841,
+      "unit": ""
+    },
+    {
+      "rank": 9,
+      "feature": "restecg",
+      "display_name": "Resting ECG Results",
+      "type": "categorical",
+      "mean_abs_shap": 0.18,
+      "unit": ""
+    },
+    {
+      "rank": 10,
+      "feature": "oldpeak",
+      "display_name": "ST Depression (Oldpeak)",
+      "type": "numerical",
+      "mean_abs_shap": 0.1747,
+      "unit": "mm"
+    },
+    {
+      "rank": 11,
+      "feature": "chol",
+      "display_name": "Serum Cholesterol",
+      "type": "numerical",
+      "mean_abs_shap": 0.1404,
+      "unit": "mg/dl"
+    },
+    {
+      "rank": 12,
+      "feature": "age",
+      "display_name": "Age",
+      "type": "numerical",
+      "mean_abs_shap": 0.0675,
+      "unit": "years"
+    },
+    {
+      "rank": 13,
+      "feature": "fbs",
+      "display_name": "Fasting Blood Sugar",
+      "type": "categorical",
+      "mean_abs_shap": 0.0255,
+      "unit": ""
+    }
+  ],
+  "beeswarm_plot": "shap_summary_beeswarm.png",
+  "importance_bar_plot": "shap_global_importance_bar.png"
+}

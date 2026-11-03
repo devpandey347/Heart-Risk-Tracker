@@ -1,0 +1,107 @@
+[
+  {
+    "model": "Logistic Regression",
+    "cv_accuracy_mean": 0.8346938775510205,
+    "cv_accuracy_std": 0.018519853755062134,
+    "test_accuracy": 0.8688524590163934,
+    "test_precision": 0.8125,
+    "test_recall": 0.9285714285714286,
+    "test_f1": 0.8666666666666667,
+    "test_roc_auc": 0.9523809523809523,
+    "confusion_matrix": [
+      [
+        27,
+        6
+      ],
+      [
+        2,
+        26
+      ]
+    ],
+    "cm_figure": "cm_logistic_regression.png"
+  },
+  {
+    "model": "Random Forest",
+    "cv_accuracy_mean": 0.8056122448979591,
+    "cv_accuracy_std": 0.02251619755209791,
+    "test_accuracy": 0.9180327868852459,
+    "test_precision": 0.8709677419354839,
+    "test_recall": 0.9642857142857143,
+    "test_f1": 0.9152542372881356,
+    "test_roc_auc": 0.9577922077922079,
+    "confusion_matrix": [
+      [
+        29,
+        4
+      ],
+      [
+        1,
+        27
+      ]
+    ],
+    "cm_figure": "cm_random_forest.png"
+  },
+  {
+    "model": "SVM",
+    "cv_accuracy_mean": 0.8348639455782314,
+    "cv_accuracy_std": 0.021296904092610352,
+    "test_accuracy": 0.8360655737704918,
+    "test_precision": 0.78125,
+    "test_recall": 0.8928571428571429,
+    "test_f1": 0.8333333333333334,
+    "test_roc_auc": 0.9372294372294372,
+    "confusion_matrix": [
+      [
+        26,
+        7
+      ],
+      [
+        3,
+        25
+      ]
+    ],
+    "cm_figure": "cm_svm.png"
+  },
+  {
+    "model": "KNN",
+    "cv_accuracy_mean": 0.8348639455782314,
+    "cv_accuracy_std": 0.021296904092610352,
+    "test_accuracy": 0.8360655737704918,
+    "test_precision": 0.78125,
+    "test_recall": 0.8928571428571429,
+    "test_f1": 0.8333333333333334,
+    "test_roc_auc": 0.920995670995671,
+    "confusion_matrix": [
+      [
+        26,
+        7
+      ],
+      [
+        3,
+        25
+      ]
+    ],
+    "cm_figure": "cm_knn.png"
+  },
+  {
+    "model": "Gradient Boosting",
+    "cv_accuracy_mean": 0.789030612244898,
+    "cv_accuracy_std": 0.028929566224442076,
+    "test_accuracy": 0.9016393442622951,
+    "test_precision": 0.84375,
+    "test_recall": 0.9642857142857143,
+    "test_f1": 0.9,
+    "test_roc_auc": 0.9556277056277056,
+    "confusion_matrix": [
+      [
+        28,
+        5
+      ],
+      [
+        1,
+        27
+      ]
+    ],
+    "cm_figure": "cm_gradient_boosting.png"
+  }
+]

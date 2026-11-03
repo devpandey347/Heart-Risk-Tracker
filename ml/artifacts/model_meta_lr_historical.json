@@ -1,0 +1,139 @@
+{
+  "best_model": "Logistic Regression",
+  "selection_method": "highest mean CV F1 on training folds (test set not used in selection)",
+  "best_metrics": {
+    "cv_accuracy_mean": 0.8428571428571429,
+    "cv_accuracy_std": 0.021823445741339154,
+    "cv_f1_mean": 0.821396864377274,
+    "cv_f1_std": 0.014910327727348245,
+    "test_accuracy": 0.8524590163934426,
+    "test_precision": 0.8064516129032258,
+    "test_recall": 0.8928571428571429,
+    "test_f1": 0.847457627118644,
+    "test_roc_auc": 0.9567099567099567
+  },
+  "split_config": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "cv_folds": 5,
+    "train_rows": 242,
+    "test_rows": 61,
+    "stratified": true
+  },
+  "feature_schema": {
+    "all_features": [
+      "age",
+      "trestbps",
+      "chol",
+      "thalach",
+      "oldpeak",
+      "ca",
+      "sex",
+      "cp",
+      "fbs",
+      "restecg",
+      "exang",
+      "slope",
+      "thal"
+    ],
+    "numerical_features": [
+      "age",
+      "trestbps",
+      "chol",
+      "thalach",
+      "oldpeak",
+      "ca"
+    ],
+    "binary_features": [
+      "sex",
+      "fbs",
+      "exang"
+    ],
+    "nominal_features": [
+      "cp",
+      "restecg",
+      "slope",
+      "thal"
+    ],
+    "feature_count": 13,
+    "transformed_feature_count": 18,
+    "encoding": "binary(0/1 passthrough) + OHE(drop=first) for nominal"
+  },
+  "target_mapping": {
+    "description": "Original 0=no disease; 1-4=disease mapped to binary 0/1",
+    "no_disease": 0,
+    "disease": 1
+  },
+  "dataset": {
+    "file": "processed.cleveland.data",
+    "total_rows": 303,
+    "missing_cells": 6,
+    "missing_features": [
+      "ca",
+      "thal"
+    ]
+  },
+  "all_models": [
+    {
+      "model": "Logistic Regression",
+      "cv_accuracy_mean": 0.8428571428571429,
+      "cv_accuracy_std": 0.021823445741339154,
+      "cv_f1_mean": 0.821396864377274,
+      "cv_f1_std": 0.014910327727348245,
+      "test_accuracy": 0.8524590163934426,
+      "test_precision": 0.8064516129032258,
+      "test_recall": 0.8928571428571429,
+      "test_f1": 0.847457627118644,
+      "test_roc_auc": 0.9567099567099567
+    },
+    {
+      "model": "Random Forest",
+      "cv_accuracy_mean": 0.8098639455782314,
+      "cv_accuracy_std": 0.024485366662951705,
+      "cv_f1_mean": 0.787008170833588,
+      "cv_f1_std": 0.018512712102508228,
+      "test_accuracy": 0.9016393442622951,
+      "test_precision": 0.8666666666666667,
+      "test_recall": 0.9285714285714286,
+      "test_f1": 0.896551724137931,
+      "test_roc_auc": 0.9588744588744589
+    },
+    {
+      "model": "SVM",
+      "cv_accuracy_mean": 0.8181972789115646,
+      "cv_accuracy_std": 0.02695537994077249,
+      "cv_f1_mean": 0.7950491717933579,
+      "cv_f1_std": 0.021848297628524825,
+      "test_accuracy": 0.9344262295081968,
+      "test_precision": 0.9,
+      "test_recall": 0.9642857142857143,
+      "test_f1": 0.9310344827586207,
+      "test_roc_auc": 0.9675324675324675
+    },
+    {
+      "model": "KNN",
+      "cv_accuracy_mean": 0.78078231292517,
+      "cv_accuracy_std": 0.06174289220501999,
+      "cv_f1_mean": 0.7492680443856256,
+      "cv_f1_std": 0.07677945339072177,
+      "test_accuracy": 0.9344262295081968,
+      "test_precision": 0.9,
+      "test_recall": 0.9642857142857143,
+      "test_f1": 0.9310344827586207,
+      "test_roc_auc": 0.976190476190476
+    },
+    {
+      "model": "Gradient Boosting",
+      "cv_accuracy_mean": 0.7724489795918368,
+      "cv_accuracy_std": 0.03116400890401465,
+      "cv_f1_mean": 0.7410594315245478,
+      "cv_f1_std": 0.03506131460985472,
+      "test_accuracy": 0.9016393442622951,
+      "test_precision": 0.84375,
+      "test_recall": 0.9642857142857143,
+      "test_f1": 0.9,
+      "test_roc_auc": 0.9512987012987013
+    }
+  ],
+  "disclaimer": "EDUCATIONAL USE ONLY. Not a medical device. Not for clinical diagnosis."
+}

@@ -1,0 +1,237 @@
+{
+  "best_model": "SVM",
+  "selection_method": "Highest mean outer-fold F1 in 5x4 nested stratified cross-validation on 242-row training partition. SVM was selected before seed-2026 test outcomes were inspected, using highest mean outer-fold F1 from nested cross-validation. Definitive hyperparameters tuned by GridSearchCV on all 242 training rows. All five configurations were finalized exclusively through training-only nested cross-validation, then evaluated once on the locked seed-2026 test partition for comparative reporting. These test results did not influence champion selection.",
+  "best_params": {
+    "classifier__C": 0.1,
+    "classifier__class_weight": null,
+    "classifier__gamma": "scale",
+    "classifier__kernel": "sigmoid",
+    "preprocessor__num__scaler": "RobustScaler"
+  },
+  "best_metrics": {
+    "cv_f1_mean": 0.7934786402228263,
+    "cv_f1_std": 0.03219846529640586,
+    "cv_accuracy_mean": 0.810204081632653,
+    "cv_accuracy_std": 0.03380313282236722,
+    "test_accuracy": 0.9344262295081968,
+    "test_precision": 0.9285714285714286,
+    "test_recall": 0.9285714285714286,
+    "test_f1": 0.9285714285714286,
+    "test_roc_auc": 0.972943722943723
+  },
+  "target_achieved_90_pct": true,
+  "split_config": {
+    "test_size": 0.2,
+    "test_split_seed": 2026,
+    "cv_folds_outer": 5,
+    "cv_folds_inner": 4,
+    "train_rows": 242,
+    "test_rows": 61,
+    "stratified": true
+  },
+  "feature_schema": {
+    "all_features": [
+      "age",
+      "trestbps",
+      "chol",
+      "thalach",
+      "oldpeak",
+      "ca",
+      "sex",
+      "cp",
+      "fbs",
+      "restecg",
+      "exang",
+      "slope",
+      "thal"
+    ],
+    "numerical_features": [
+      "age",
+      "trestbps",
+      "chol",
+      "thalach",
+      "oldpeak",
+      "ca"
+    ],
+    "binary_features": [
+      "sex",
+      "fbs",
+      "exang"
+    ],
+    "nominal_features": [
+      "cp",
+      "restecg",
+      "slope",
+      "thal"
+    ],
+    "feature_count": 13,
+    "transformed_feature_count": 18
+  },
+  "target_mapping": {
+    "description": "Original 0=no disease; 1-4=disease mapped to binary 0/1",
+    "no_disease": 0,
+    "disease": 1
+  },
+  "all_models": [
+    {
+      "model": "Logistic Regression",
+      "cv_accuracy_mean": 0.8183673469387756,
+      "cv_accuracy_std": 0.04357144848571293,
+      "cv_f1_mean": 0.7861295927043541,
+      "cv_f1_std": 0.06029835625602001,
+      "test_accuracy": 0.9180327868852459,
+      "test_precision": 0.96,
+      "test_recall": 0.8571428571428571,
+      "test_f1": 0.9056603773584906,
+      "test_roc_auc": 0.9794372294372293,
+      "confusion_matrix": [
+        [
+          32,
+          1
+        ],
+        [
+          4,
+          24
+        ]
+      ],
+      "best_params": {
+        "classifier__C": 0.1,
+        "classifier__class_weight": "balanced",
+        "classifier__max_iter": 1000,
+        "classifier__solver": "lbfgs",
+        "preprocessor__num__scaler": "RobustScaler"
+      },
+      "cm_figure": "cm_logistic_regression.png"
+    },
+    {
+      "model": "Random Forest",
+      "cv_accuracy_mean": 0.7730442176870749,
+      "cv_accuracy_std": 0.06838997662502887,
+      "cv_f1_mean": 0.7406265994366681,
+      "cv_f1_std": 0.0867410990276668,
+      "test_accuracy": 0.8688524590163934,
+      "test_precision": 0.9166666666666666,
+      "test_recall": 0.7857142857142857,
+      "test_f1": 0.8461538461538461,
+      "test_roc_auc": 0.962121212121212,
+      "confusion_matrix": [
+        [
+          31,
+          2
+        ],
+        [
+          6,
+          22
+        ]
+      ],
+      "best_params": {
+        "classifier__max_depth": null,
+        "classifier__min_samples_split": 6,
+        "classifier__n_estimators": 200,
+        "classifier__random_state": 42
+      },
+      "cm_figure": "cm_random_forest.png"
+    },
+    {
+      "model": "SVM",
+      "cv_accuracy_mean": 0.810204081632653,
+      "cv_accuracy_std": 0.03380313282236722,
+      "cv_f1_mean": 0.7934786402228263,
+      "cv_f1_std": 0.03219846529640586,
+      "test_accuracy": 0.9344262295081968,
+      "test_precision": 0.9285714285714286,
+      "test_recall": 0.9285714285714286,
+      "test_f1": 0.9285714285714286,
+      "test_roc_auc": 0.972943722943723,
+      "confusion_matrix": [
+        [
+          31,
+          2
+        ],
+        [
+          2,
+          26
+        ]
+      ],
+      "best_params": {
+        "classifier__C": 0.1,
+        "classifier__class_weight": null,
+        "classifier__gamma": "scale",
+        "classifier__kernel": "sigmoid",
+        "preprocessor__num__scaler": "RobustScaler"
+      },
+      "cm_figure": "cm_svm.png"
+    },
+    {
+      "model": "KNN",
+      "cv_accuracy_mean": 0.8139455782312925,
+      "cv_accuracy_std": 0.019460717227710096,
+      "cv_f1_mean": 0.7783367281078952,
+      "cv_f1_std": 0.034235685279476506,
+      "test_accuracy": 0.9016393442622951,
+      "test_precision": 0.9230769230769231,
+      "test_recall": 0.8571428571428571,
+      "test_f1": 0.8888888888888888,
+      "test_roc_auc": 0.9491341991341992,
+      "confusion_matrix": [
+        [
+          31,
+          2
+        ],
+        [
+          4,
+          24
+        ]
+      ],
+      "best_params": {
+        "classifier__metric": "euclidean",
+        "classifier__n_neighbors": 9,
+        "classifier__p": 2,
+        "classifier__weights": "uniform",
+        "preprocessor__num__scaler": "StandardScaler"
+      },
+      "cm_figure": "cm_knn.png"
+    },
+    {
+      "model": "Gradient Boosting",
+      "cv_accuracy_mean": 0.7811224489795918,
+      "cv_accuracy_std": 0.062082633933075886,
+      "cv_f1_mean": 0.7566332739713094,
+      "cv_f1_std": 0.07472697513956264,
+      "test_accuracy": 0.8524590163934426,
+      "test_precision": 0.9130434782608695,
+      "test_recall": 0.75,
+      "test_f1": 0.8235294117647058,
+      "test_roc_auc": 0.9458874458874458,
+      "confusion_matrix": [
+        [
+          31,
+          2
+        ],
+        [
+          7,
+          21
+        ]
+      ],
+      "best_params": {
+        "classifier__learning_rate": 0.02,
+        "classifier__max_depth": 2,
+        "classifier__n_estimators": 100,
+        "classifier__random_state": 42,
+        "classifier__subsample": 0.8
+      },
+      "cm_figure": "cm_gradient_boosting.png"
+    }
+  ],
+  "historical_exploratory_note": "The historical seed-42 test evaluation (61 records) was exploratory and contaminated by prior tuning checks. The final locked evaluation uses an untouched stratified test split (seed 2026, N=61).",
+  "disclaimer": "EDUCATIONAL USE ONLY. Not a medical device. Not for clinical diagnosis.",
+  "dataset": {
+    "file": "processed.cleveland.data",
+    "total_rows": 303,
+    "missing_cells": 6,
+    "missing_features": [
+      "ca",
+      "thal"
+    ]
+  }
+}

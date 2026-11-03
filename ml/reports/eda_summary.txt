@@ -1,0 +1,170 @@
+
+======================================================================
+  SECTION 1 — DATASET BASICS
+======================================================================
+  File        : D:\CSE276 PROJECT\ml\data\raw\processed.cleveland.data
+  Delimiter   : comma (',')
+  Rows        : 303
+  Columns     : 14  (13 features + 1 target)
+  Missing marker in file : '?'  → loaded as NaN
+
+======================================================================
+  SECTION 2 — DATA TYPES
+======================================================================
+age         float64
+sex         float64
+cp          float64
+trestbps    float64
+chol        float64
+fbs         float64
+restecg     float64
+thalach     float64
+exang       float64
+oldpeak     float64
+slope       float64
+ca          float64
+thal        float64
+target        int64
+
+  NOTE: All columns load as float64 because '?' was the only non-numeric value.
+        Categorical features are stored as floats by convention in this dataset.
+
+======================================================================
+  SECTION 3 — MISSING VALUES
+======================================================================
+      count  percent
+ca        4     1.32
+thal      2     0.66
+
+  Total missing cells : 6
+  Rows with ≥1 missing: 6
+
+  IMPORTANT: 'ca' (vessels coloured by fluoroscopy) and 'thal' (thalassemia)
+  have missing values.  These will be imputed in the preprocessing pipeline
+  (Chunk 3).  DO NOT drop these rows during EDA — we observe only.
+
+======================================================================
+  SECTION 4 — DESCRIPTIVE STATISTICS (numerical features)
+======================================================================
+           age  trestbps     chol  thalach  oldpeak       ca
+count  303.000    303.00  303.000  303.000  303.000  299.000
+mean    54.439    131.69  246.693  149.607    1.040    0.672
+std      9.039     17.60   51.777   22.875    1.161    0.937
+min     29.000     94.00  126.000   71.000    0.000    0.000
+25%     48.000    120.00  211.000  133.500    0.000    0.000
+50%     56.000    130.00  241.000  153.000    0.800    0.000
+75%     61.000    140.00  275.000  166.000    1.600    1.000
+max     77.000    200.00  564.000  202.000    6.200    3.000
+
+======================================================================
+  SECTION 5 — ORIGINAL TARGET DISTRIBUTION (values 0–4)
+======================================================================
+  target = 0 → 164 rows  (54.1%)
+  target = 1 →  55 rows  (18.2%)
+  target = 2 →  36 rows  (11.9%)
+  target = 3 →  35 rows  (11.6%)
+  target = 4 →  13 rows  (4.3%)
+
+======================================================================
+  SECTION 6 — BINARY TARGET MAPPING
+======================================================================
+  Per UCI documentation and standard ML practice:
+  • target == 0  → No heart disease (absence)
+  • target >= 1  → Heart disease present (values 1, 2, 3, 4 all → 1)
+
+  This is the standard Cleveland subset convention used in virtually
+  all published benchmarks on this dataset.
+
+  Binary target = 0 (No disease): 164 rows  (54.1%)
+  Binary target = 1 (Disease present): 139 rows  (45.9%)
+
+  Class ratio (disease:no-disease) = 0.85 : 1
+  → Dataset is mildly imbalanced; will use stratified splits in training.
+
+======================================================================
+  SECTION 7 — CATEGORICAL FEATURE VALUE RANGES
+======================================================================
+  sex       : [np.float64(0.0), np.float64(1.0)]
+  cp        : [np.float64(1.0), np.float64(2.0), np.float64(3.0), np.float64(4.0)]
+  fbs       : [np.float64(0.0), np.float64(1.0)]
+  restecg   : [np.float64(0.0), np.float64(1.0), np.float64(2.0)]
+  exang     : [np.float64(0.0), np.float64(1.0)]
+  slope     : [np.float64(1.0), np.float64(2.0), np.float64(3.0)]
+  thal      : [np.float64(3.0), np.float64(6.0), np.float64(7.0)]
+
+======================================================================
+  SECTION 8 — FEATURE DESCRIPTIONS (UCI)
+======================================================================
+  age       : Age in years (29–77 in this dataset)
+  sex       : 1 = male, 0 = female
+  cp        : Chest pain: 1=typical angina, 2=atypical, 3=non-anginal, 4=asymptomatic
+  trestbps  : Resting blood pressure in mmHg on admission to hospital
+  chol      : Serum cholesterol in mg/dl
+  fbs       : Fasting blood sugar > 120 mg/dl: 1=true, 0=false
+  restecg   : Resting ECG: 0=normal, 1=ST-T wave abnormality, 2=left ventricular hypertrophy
+  thalach   : Maximum heart rate achieved (bpm)
+  exang     : Exercise-induced angina: 1=yes, 0=no
+  oldpeak   : ST depression induced by exercise relative to rest
+  slope     : Slope of peak exercise ST segment: 1=up, 2=flat, 3=down
+  ca        : Number of major vessels (0–3) coloured by fluoroscopy  ⚠ has missing values
+  thal      : Thalassemia: 3=normal, 6=fixed defect, 7=reversible defect  ⚠ has missing values
+  target    : Diagnosis (0=no disease; 1–4=disease; mapped to binary for ML)
+
+======================================================================
+  FIGURE 1 — Target class distribution (binary)
+======================================================================
+
+======================================================================
+  FIGURE 2 — Missing values by feature
+======================================================================
+
+======================================================================
+  FIGURE 3 — Numerical feature distributions
+======================================================================
+
+======================================================================
+  FIGURE 4 — Numerical features by target class (boxplots)
+======================================================================
+
+======================================================================
+  FIGURE 5 — Categorical feature distributions by target class
+======================================================================
+
+======================================================================
+  FIGURE 6 — Correlation heatmap
+======================================================================
+
+======================================================================
+  FIGURE 7 — Pairplot (numerical features, coloured by target)
+======================================================================
+
+======================================================================
+  FIGURE 8 — Age distribution by target class (KDE)
+======================================================================
+
+======================================================================
+  SECTION 9 — KEY OBSERVATIONS (EDA Summary)
+======================================================================
+  1. DATASET SIZE: 303 patients, 13 features + 1 target — a small but well-studied dataset.
+  2. MISSING VALUES: Only 'ca' and 'thal' have missing values (6 rows total — ~2% of data).
+     These will be imputed in the preprocessing pipeline, not dropped.
+  3. CLASS BALANCE: 164 no-disease (54.1%) vs 139 disease (45.9%) — mildly imbalanced.
+     Standard stratified train/test split will handle this adequately.
+  4. NUMERICAL FEATURES:
+     • 'thalach' (max heart rate) tends to be LOWER in disease patients — a strong signal.
+     • 'oldpeak' (ST depression) tends to be HIGHER in disease patients — another strong signal.
+     • 'age' and 'trestbps' show moderate separation between classes.
+     • 'chol' shows minimal separation — a weaker discriminator here.
+  5. CATEGORICAL FEATURES:
+     • 'cp' (chest pain type 4 — asymptomatic) is strongly associated with disease.
+     • 'exang' (exercise angina = 1) is highly associated with disease.
+     • 'sex' (male=1) shows higher disease prevalence in this dataset.
+     • 'thal' (reversible defect = 7) is strongly associated with disease.
+  6. CORRELATION CAVEAT: Pearson correlation is computed only for numerical features.
+     Categorical features (like 'sex', 'cp', 'thal') require Cramér's V or phi-coefficient
+     for meaningful correlation estimates — not done here to keep the script simple.
+  7. DATASET LIMITATIONS:
+     • Only 303 patients — generalization to the real world is limited.
+     • All patients are from one hospital (Cleveland Clinic Foundation, 1988).
+     • Gender, ethnicity, and age distributions may not represent the general population.
+     • This dataset CANNOT be used for clinical diagnosis — educational use only.
